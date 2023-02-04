@@ -3,7 +3,7 @@ layout: page
 title: About
 subtitle: Moon, Duck, Bae. 내가 좋아하는 세 가지
 permalink: /about/
-feature-img: "assets/img/pexels/about_backgroud.jpg"
+feature-img: "assets/img/pexels/about_background.jpg"
 tags: [Page]
 ---
 
