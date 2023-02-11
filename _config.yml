@@ -5,12 +5,12 @@ url: "https://ycseong07.github.io"
 # THEME-SPECIFIC CONFIGURATION
 title: "MoonDB's Blog"                                    # site's title
 description: "데이터와 사람을 연결하는 블로그"      # used by search engines
-avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
+avatar: assets/img/duck.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
 # Header and footer text
 header_text: "Welcome to MoonDB's blog"  # Change Blog header text
-header_feature_image: assets/img/header/triangular.jpeg
+header_feature_image: assets/img/header/moon.png
 header_feature_image_responsive: true
 footer_text: " "
 
