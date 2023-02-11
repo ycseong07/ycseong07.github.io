@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "나는 ML 엔지니어가 아닌가본데?"
-tags: [Daily]
+title: asd
+tags: [Markdown]
 ---
 
 # 하고 싶은 일이 뭘까?
