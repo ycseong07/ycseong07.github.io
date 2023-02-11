@@ -28,7 +28,7 @@ ML 엔지니어로써 취업한지는 약 8개월 정도, 관련 업무를 하�
 
 <p align="center">
   <a href="https://www.notion.so/zzsza/ac5b18a482fb4df497d4e8257ad4d516">
-    <img src="/assets/img/geulddo.png", style="width: 150px; height: 148px;>
+    <img src="/assets/img/geulddo.png", style="width: 150px; height: 148px;">
   </a>
 </p>
 
