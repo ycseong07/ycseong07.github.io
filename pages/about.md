@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-subtitle: Moon, Duck, Bae. 내가 좋아하는 세 가지
+subtitle: Moon, Duck, Bae.
 permalink: /about/
 feature-img: "assets/img/pexels/about_background.jpg"
 tags: [Page]
@@ -12,5 +12,5 @@ tags: [Page]
 
 데이터와 사람을 연결하고자 하는 비전을 가지고 있습니다.
 
-다재다능한 ML 엔지니어가 되고 싶습니다.  
+다재다능한 ML 엔지니어가 되고 싶습니다.
 
