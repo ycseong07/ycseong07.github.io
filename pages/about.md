@@ -1,14 +1,16 @@
 ---
 layout: page
-title: About
+title: Moon, Duck, Bae
 permalink: /about/
-feature-img: "assets/img/pexels/travel.jpeg"
+feature-img: "assets/img/pexels/coffee.jpg"
 tags: [Page]
 ---
 
-Type on Strap is based on Type Theme, a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+# 문덕배 (2살, ML 엔지니어)
 
-Head over to the [theme's documentation](https://github.io/sylhare/Type-on-Strap) for much more information about Type on Strap or to install this theme on your own Jekyll site.
+데이터로 사람을 이해하고, 사람에게 데이터를 이해시키고자 합니다.
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
+제가 이해한 지식을 공유하는 것을 좋아합니다.
+
+새로운 지식이나 도구를 익하는 것을 좋아합니다.
  
