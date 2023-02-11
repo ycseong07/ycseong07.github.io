@@ -9,7 +9,7 @@ avatar: assets/img/duck.png                         # Empty for no avatar in nav
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
 # Header and footer text
-header_text: "문덕배의 블로그입니다"  # Change Blog header text
+header_text: "Moon, Duck, Bae"  # Change Blog header text
 header_feature_image: assets/img/header/moon.png
 header_feature_image_responsive: true
 footer_text: " "
