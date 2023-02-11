@@ -25,9 +25,9 @@ ML 엔지니어로써 취업한지는 약 8개월 정도, 관련 업무를 하�
 # 정기적으로 작성할 글의 주제
 
 당장은 회사에서 ML관련 프로젝트를 주력으로 하고있지 않아서, 이전에 했던 프로젝트 코드를 다듬어 경험을 공유하고, 새로운 사이드 프로젝트를 진행하면서 내용을 공유하고자 한다. 최근에는 데이터 거버넌스에 관심이 생겨 관련 글도 업로드 할 수 있을 것 같다.
-[!글또]
 
-[!["글또"](/assets/img/geulddo.png)](https://www.notion.so/zzsza/ac5b18a482fb4df497d4e8257ad4d516)
-{% include aligner.html images="geulddo.png" %}
+<p align="center", href="https://www.notion.so/zzsza/ac5b18a482fb4df497d4e8257ad4d516">
+    <img src="/assets/img/geulddo.png">
+</p>
 
 
