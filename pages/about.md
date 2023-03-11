@@ -6,7 +6,7 @@ feature-img: "assets/img/pexels/coffee.jpg"
 tags: [Page]
 ---
 
-# 문덕배 (2살, 데이터 사이언티스트)
+# 문덕배 (1살, 데이터 사이언티스트)
 
 데이터로 사람을 이해하고, 사람에게 데이터를 이해시키고자 합니다.
 

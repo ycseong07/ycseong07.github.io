@@ -4,7 +4,7 @@ title: Tidymodels로 AutoML을 구현해보자 (1)
 description: 일반인도 사용할 수 있는 AutoML 패키지 제작에 관한 글입니다. 프로젝트는 아직 진행 중이며, 그간 고민했던 것들과 앞으로 해결해야할 것들을 정리하고, 공유하기 위해 글로 남깁니다.
 ---
 
-# 들어가며
+# 간단한 AutoML 아키텍처 만들어보기
 
 약 9개월 전, 처음 접한 "AutoML"이라는 단어는 마치 마법처럼 들렸다. 데이터만 준비하면 ML모델을 자동으로 만들어 비교해 준다는데, 당장 써봐야겠다 싶었다. 당시에는 ML 자체에 대한 지식도 깊지 않아 Optuna나 AutoGluon 같은 저수준의 라이브러리를 사용해 볼 엄두가 나지 않았기 때문에, AWS 클라우드의 SageMaker Autopilot을 사용해보기로 했다. 그리고 샘플 데이터를 넣어보니 신세계가 펼쳐졌다. 데이터 전처리나 하이퍼파라미터 튜닝에 그렇게나 공을 들여가며 아등바등했던 ML 모델링인데, SageMaker는 짧은 시간 안에 여러 모델들을 테스트 한 결과를 비교해주고, 어떤 방식으로 모델링을 진행했는지에 대해서도 보고서 형태로 제공해주었다.
 
@@ -69,6 +69,6 @@ Tidymodels를 사용해 머신러닝 모델을 만들 떄 인상적이었던 것
 
 <p align="center">
   <a href="https://github.com/statgarten/stove">
-    <img src="/assets/img/portfolio/stove_logo.png">
+    <img src="/assets/img/portfolio/stove_logo.png", width="250" height="535">
   </a>
 </p>
