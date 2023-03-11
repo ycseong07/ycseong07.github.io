@@ -67,7 +67,7 @@ Tidymodels를 사용해 머신러닝 모델을 만들 떄 인상적이었던 것
 
  그 외에도 부족한 점이 많지만, 앞으로 하나씩 보완해나가며 완성해 나가고자 한다.
 
-<p align="center", height="50%" width="50%">
+<p align="center", height="50%", width="50%">
   <a href="https://github.com/statgarten/stove">
     <img src="/assets/img/portfolio/stove_logo.png">
   </a>
