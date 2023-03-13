@@ -18,7 +18,9 @@ description: 일반인도 사용할 수 있는 AutoML 패키지 제작에 관한
 
 # 전체적인 구조
 
-{% include aligner.html images="assets/img/AutoML_arc.png" column=1 %}
+<p align="center">
+  <img src="/assets/img/AutoML_arc.png">
+</p>
 
 패키지는 정형데이터에 대해 분류/회귀 모델링을 지원하도록 만들고자 했다. 기본적인 전처리가 되어있는 데이터를 불러온다는 가정 하에, Train-Test Split - Cross Validation 파트에서 수행할 전처리 방법 정의 - 모델링 - 결과출력의 4단계 과정을 통해 진행되도록 설계했다. 여기서 기본적인 전처리의 기준은 다음에 해당한다.
 
