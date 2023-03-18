@@ -3,5 +3,21 @@
 
 @import "type-on-strap";
 
-
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.image-with-caption {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .image-with-caption img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .image-with-caption figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+  }
