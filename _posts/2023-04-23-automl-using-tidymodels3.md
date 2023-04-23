@@ -116,7 +116,7 @@ tuned_results <-
   workflow %>%
   tune::tune_bayes(cv_folds, initial = 10, iter = 5, param_info = param)
 ```
-위와 같이 오버샘플링을 위한 레시피를 따로 만들어 교차검증 중 train fold에 적용할 수 있다. tune_bayes() 함수의 `initial` 파라미터는 베이지안 최적화 과정에서 사용되는 초기 샘플의 수를 정의하며, `iter` 파라미터는 베이지안 최적화의 반복 횟수를 지정
+위와 같이 오버샘플링을 위한 레시피를 따로 만들어 교차검증 중 train fold에 적용할 수 있다. tune_bayes() 함수의 `initial` 파라미터는 베이지안 최적화 과정에서 사용되는 초기 샘플의 수를 정의하며, `iter` 파라미터는 베이지안 최적화의 반복 횟수를 지정한다.
 
 <div align="center" class="image-with-caption">
   <figure>
