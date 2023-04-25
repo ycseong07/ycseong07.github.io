@@ -23,12 +23,12 @@ data_preprocessed <- recipes::prep(preprocessing_recipe, training = cleaned_data
 
 # 데이터 분할
 set.seed(1234)
-dataSplit <- rsample::initial_split(data_preprocessed,
+data_split <- rsample::initial_split(data_preprocessed,
                                     strata = tidyselect::all_of("STK"),
                                     prop = 0.7)
 
-train <- rsample::training(dataSplit)
-test <- rsample::testing(dataSplit)
+train <- rsample::training(data_split)
+test <- rsample::testing(data_split)
 
 # Random Forest 모델 정의
 model_spec <- parsnip::rand_forest() %>%
