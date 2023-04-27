@@ -90,6 +90,6 @@ Tidymodels를 사용해 머신러닝 모델을 만들 때 인상적이었던 것
 
 <p align="center">
   <a href="https://github.com/statgarten/stove">
-    <img src="/assets/img/portfolio/stove_logo.png" height="50%" width="50%">
+    <img src="/assets/img/portfolio/stove_logo.png" height="40%" width="40%">
   </a>
 </p>
