@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tidymodels로 AutoML을 구현해보자 (2)
+tags: [R, ML]
 description: 일반인도 사용할 수 있는 AutoML 패키지(stove) 제작에 관한 글입니다. Tidymodels로 간단한 분류모델을 만들어보면서 현재 개발 중인 stove 패키지의 구조를 재정비 해보려고 합니다.
 ---
 
@@ -50,17 +51,16 @@ cleaned_data <- cleaned_data %>%
 
 ## 2. 데이터 전처리
 
-데이터 전처리에는 `recipes`라는 패키지를 사용한다. 결측값 처리, 범주형 변수 인코딩, 변수 정규화 등 다양한 전처리 작업을 수행할 수 있다. 이 패키지는 내가 원하는 전처리를 `recipe`에 적어두고, 그 순서대로 데이터를 `bake`한다는 컨셉을 가지고 있다. 아래 예시에서는 다른 변수들과의 correlation이 0.8 이상인 변수를 제거하고, 데이터 값을 정규화시키는 전처리를 수행했다. `all_numeric()` 함수를 통해 숫자형 타입을 가진 열에 대해서만 해당 전처리를 하도록 지정할 수 있다. 
+데이터 전처리에는 `recipes`라는 패키지를 사용한다. 결측값 처리, 범주형 변수 인코딩, 변수 정규화 등 다양한 전처리 작업을 수행할 수 있다. 이 패키지는 내가 원하는 전처리를 `recipe`에 적어두고, 그 순서대로 데이터를 `bake`한다는 컨셉을 가지고 있다. 아래 예시에서는 임의로 TG 변수에 로그를 취해주는 전처리 방식을 정의했다.
 
 ```r
 preprocessing_recipe <- recipes::recipe(STK ~ ., data = cleaned_data) %>%
-  recipes::step_corr(recipes::all_numeric(), threshold = 0.8) %>%
-  recipes::step_normalize(recipes::all_numeric())
+  recipes::step_log(TG)
 
 data_preprocessed <- recipes::prep(preprocessing_recipe, training = cleaned_data) %>%
   recipes::bake(new_data = cleaned_data)
 ```
-stove 패키지를 만들 때만 해도 머신러닝을 한다면 당연히 교차검증 과정을 포함해야 한다고 생각했지만, 교차검증을 거친 모델이 그렇지 않은 모델에 비해 얼마나 성능이 나아졌는가에 대한 정보를 얻고 싶어하는 요구도 있었고, 교차검증을 할 만큼 데이터가 충분치 않은 경우에도 ML 모델링을 해보고 싶다는 요구도 있었다. 그래서 이 글에서도 교차검증을 수행하지 않는 예시를 들었고, 향후 stove 에는 교차검증을 수행하지 않는 옵션을 선택할 수 있도록 개발할 예정이다. 만약 Cross Validation을 수행한다면 데이터 분할 전후로 수행해야하는 전처리를 구분해야 하며, 이 내용은 이후의 글에서 다루려고 한다. 
+만약 Cross Validation을 수행한다면 데이터 분할 전후로 수행해야하는 전처리를 구분해야 하며, 이 내용은 이후의 글에서 다루려고 한다. 
 
 ## 3. 데이터 분할
 데이터 분할에는 `rsample`패키지를 사용한다. 훈련-테스트 분할 뿐만 아니라, 다양한 샘플링 방법, 교차 검증에도 사용한다. 아래 예시에서는 strata 옵션을 통해 훈련 데이터와 테스트 데이터에서의 클래스 비율을 동일하게 유지시켰다. 
@@ -81,7 +81,7 @@ summary(test$STK) # 0(18000) : 1(18000)
 ## 4. 모델 만들기
 모델링에는 `parsnip` 패키지를 사용한다. 회귀, 분류, 클러스터링 등에 대한 다양한 모델을 일관적인 문법을 통해 생성할 수 있도록 하며, [사용할 수 있는 모델](https://parsnip.tidymodels.org/reference/index.html#models)들을 구현할 수 있는 engine을 설정하고(set_engine), 어떤 task를 수행할 것인지(set_mode)를 설정해주면 된다. 주의할 점은, 이 패키지의 모델 함수들이 가지고 있는 하이퍼파라미터 리스트가 모든 엔진에서 사용되는 것은 아니라는 점이다. 같은 모델일지라도 사용하는 엔진에 따라 지원하는 하이퍼파라미터의 종류가 다를 수 있으며, 동일한 하이퍼파라미터라도 엔진에 따라 지원하는 범위가 다르기도 하다.
 
-모델링 시 하이퍼파라미터의 튜닝은 `tune`패키지를 사용한다. 하지만 이 부분은 이후의 글에서 좀 더 자세히 설명하고자, 이 글의 예시에서는 사용하지 않았다. 아래는 분류를 위한 랜덤포레스트 모델을 만들기 위해 'ranger' 엔진을 사용하는 예시이다. 
+모델링 시 하이퍼파라미터의 튜닝은 `tune`패키지를 사용한다. 하지만 이 부분은 이후의 글에서 좀 더 자세히 설명하고자, 이 글의 예시에서는 사용하지 않았다. 아래는 분류를 위한 랜덤포레스트 모델을 만들기 위해 하이퍼파라미터 중 'trees'를 1000으로 고정하여 'ranger' 엔진을 사용하는 예시이다. 
 
 ```r
 model_spec <- parsnip::rand_forest(trees = 1000) %>% 
@@ -91,6 +91,22 @@ model_spec <- parsnip::rand_forest(trees = 1000) %>%
 # Train the model
 model_fit <- model_spec %>%
   parsnip::fit(STK ~ ., data = train)
+```
+
+만약 특정 모델이 어떤 engine과 mode를 지원하는지 알고싶다면 parsnip::show_engines() 함수를 통해 확인할 수 있다. 
+
+```r
+> show_engines("rand_forest")
+
+## # A tibble: 6 × 2
+##   engine       mode          
+##   <chr>        <chr>         
+## 1 ranger       classification
+## 2 ranger       regression    
+## 3 randomForest classification
+## 4 randomForest regression    
+## 5 spark        classification
+## 6 spark        regression    
 ```
 
 ## 5. 모델을 사용한 시험 데이터 예측
@@ -156,7 +172,7 @@ yardstick::kap(tmpDf, STK, .pred_class)
 yardstick::mcc(tmpDf, STK, .pred_class)
 ```
 
-그리고 아래처럼 `ggplot2` 패키지를 통해 Confusion Matrix를 그릴 수도 있다. 
+만약 Confusion Matrix를 이미지가 필요하다면 `ggplot2` 패키지를 사용해 아래처럼 그려볼 수 있다. 
 
 ```r
 plot <- ggplot(confusion, aes(x = actual_y, y = y_pred, fill = Frequency)) +

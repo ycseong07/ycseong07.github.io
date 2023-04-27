@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tidymodels로 AutoML을 구현해보자 (1)
+tags: [R, ML]
 description: 일반인도 사용할 수 있는 AutoML 패키지(stove) 제작에 관한 글입니다. 프로젝트는 아직 진행 중이며, 그간 고민했던 것들과 앞으로 해결해야할 것들을 정리하고, 공유하기 위해 글로 남깁니다.
 ---
 
@@ -47,7 +48,7 @@ description: 일반인도 사용할 수 있는 AutoML 패키지(stove) 제작에
 
 ## 2. 전처리 방법 정의
 
-Tidymodels를 사용해 머신러닝 모델을 만들 때 인상적이었던 것 중 하나는 `recipes`라는 패키지였다. 데이터 전처리 방법을 정의해두는 것을 요리 레시피에 비유한 것인데, 꽤 센스있는 네이밍이라고 생각한다. Under/Over Sampling, Imputation, Scaling 등의 전처리는 Local preprocessing 단계에서 수행하며, 교차검증을 위해 분리한 샘플 각각에 적용되어야 한다. recipes 패키지는 이러한 Local preprocessing 방법을 정의하는 recipe를 생성할 수 있도록 도와준다. 이 단계에서는 현재 다음과 같은 기능을 정의할 수 있도록 구현한 상태이다. 데이터 불균형에 대처하기 위한 언더/오버샘플링 역시 이 부분에서 수행되어야 하지만, 아직 구현하지 못한 상태다.  
+Tidymodels를 사용해 머신러닝 모델을 만들 때 인상적이었던 것 중 하나는 [recipes](https://recipes.tidymodels.org/)라는 패키지였다. 데이터 전처리 방법을 정의해두는 것을 요리 레시피에 비유한 것인데, 꽤 센스있는 네이밍이라고 생각한다. Under/Over Sampling, Imputation, Scaling 등의 전처리는 Local preprocessing 단계에서 수행하며, 교차검증을 위해 분리한 샘플 각각에 적용되어야 한다. recipes 패키지는 이러한 Local preprocessing 방법을 정의하는 recipe를 생성할 수 있도록 도와준다. 이 단계에서는 현재 다음과 같은 기능을 정의할 수 있도록 구현한 상태이다. 데이터 불균형에 대처하기 위한 언더/오버샘플링 역시 이 부분에서 수행되어야 하지만, 아직 구현하지 못한 상태다.  
 
   - Imputation 수행 여부
   - Scaling 수행 여부
@@ -67,7 +68,7 @@ Tidymodels를 사용해 머신러닝 모델을 만들 때 인상적이었던 것
 
   -  분류/회귀 문제 지정
   - 특정 알고리즘을 통해 모델링 할 때 사용할 engine 선택 (예를 들어, Tidymodels에서는 logistic regression의 경우 glm, brulee, glmer, glmnet 등을 engine으로 사용할 수 있다)
-  - 교차검증 시 Train set을 분할하는 횟수
+  - 교차검증 시 Train set을 몇 개의 fold로 분할할지
   - 베이지안 최적화 시 동시에 테스트할 하이퍼파라미터의 조합 개수 및 최대 서치 반복 횟수
   - 모델의 성능을 평가할 지표
 
@@ -75,7 +76,7 @@ Tidymodels를 사용해 머신러닝 모델을 만들 때 인상적이었던 것
 
 최종 모델이 결정되면, 해당 모델의 성능을 가늠하기 위해 아래와 같은 결과를 표와 그래프로써 시각화한다. 평가지표 비교표에서는, 분류모델의 경우 Accuracy, Recall, Specificity, Precision, F1-score, Kappa, MCC 값을 출력하며, 회귀모델의 경우 RMSE, RSQ, MAE, MASE, RPD 값을 출력한다. 
 
- - 분류: 평가지표 비교표, ROC Curve Plot, Confusion Matrix
+ - 분류: 평가지표 비교표, ROC Curve Plot (Multiclass 분류는 지원 x), Confusion Matrix
  - 회귀: 평가지표 비교표, Regression Plot
 
 # 구현하지 못한 것들

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tidymodels로 AutoML을 구현해보자 (3)
+tags: [R, ML]
 description: 일반인도 사용할 수 있는 AutoML 패키지(stove) 제작에 관한 글입니다. workflow 패키지를 통한 모델링 프로세스 관리, 베이지안 최적화를 다룹니다.
 ---
 # workflows 패키지로 모델링 과정을 관리해보자
@@ -121,7 +122,7 @@ tuned_results <-
 <div align="center" class="image-with-caption">
   <figure>
     <img src="/assets/img/illustration/2023-04-23_1.png" alt="image description">
-    <figcaption>교차검증을 통한 베이지안 최적화 (출처: Shear Strength Prediction of Slender Steel Fiber Reinforced Concrete Beams Using a Gradient Boosting Regression Tree Method)
+    <figcaption>교차검증을 통한 베이지안 최적화 <br><small> (출처: Shear Strength Prediction of Slender Steel Fiber Reinforced Concrete Beams Using a Gradient Boosting Regression Tree Method)</small>
     </figcaption>
   </figure>
 </div>

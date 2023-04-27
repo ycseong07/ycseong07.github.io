@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 나는 데이터 사이언티스트가 아닌가본데?
+tags: [Daily]
 description: 글또 8기에 참여하게 됐습니다. 열심히 활동해 6개월 간 많은 인연이 닿았으면 좋겠습니다!
 ---
 
@@ -29,6 +30,6 @@ description: 글또 8기에 참여하게 됐습니다. 열심히 활동해 6개�
 
 <p align="center">
   <a href="https://www.notion.so/zzsza/ac5b18a482fb4df497d4e8257ad4d516">
-    <img src="/assets/img/geulddo.png">
+    <img src="/assets/img/geulddo.png" height="35%" width="35%">
   </a>
 </p>
