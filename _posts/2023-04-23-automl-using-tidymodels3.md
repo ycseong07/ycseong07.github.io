@@ -96,11 +96,11 @@ model_spec <- parsnip::rand_forest(mtry = tune::tune(),
 ```
 모델 정의 부분에서, RF모델의 하이퍼 파라미터를 tune() 함수를 통해 tunable하게 만들었다. 이는 사용자가 각 하이퍼파라미터를 지정하지 않고, 베이지안 최적화를 통해 결정할 수 있게 하기 위함이다. 
 
-또한, 베이지안 최적화의 목표는 모델의 성능을 가장 높일 수 있는 하이퍼파라미터 조합을 찾아내는 것이며, 이러한 목적을 위해서는 훈련 중 과적합을 피하기 위해 교차검증을 하는 것이 바람직하다. 이때, `STK` 변수의 경우 클래스 불균형이 존재하기 때문에 SMOTE를 활용한 오버샘플링을 적용하고자 했고, 이는 교차검증을 수행할 때 train fold에만 적용되어야 한다.
+또한, 베이지안 최적화의 목표는 모델의 성능을 가장 높일 수 있는 하이퍼파라미터 조합을 찾아내는 것이며, 이러한 목적을 위해서는 훈련 중 과적합을 피하기 위해 교차검증을 하는 것이 바람직하다. 이때, `STK` 변수의 경우 클래스 불균형이 존재하기 때문에 랜덤오버샘플링을 적용하고자 했고, 이는 교차검증을 수행할 때 train fold에만 적용되어야 한다.
 
 ```r
 oversampling_recipe <- recipes::recipe(STK ~ ., data = train) %>%
-  themis::step_smote(STK, seed = 1234)
+  themis::step_rose(STK, seed = 1234)
 
 workflow <- workflows::workflow() %>%
   workflows::add_recipe(oversampling_recipe) %>%

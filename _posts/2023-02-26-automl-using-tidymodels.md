@@ -26,7 +26,7 @@ description: 일반인도 사용할 수 있는 AutoML 패키지(stove) 제작에
 </div>
 
 
-패키지는 정형데이터에 대해 분류/회귀 모델링을 지원하도록 만들고자 했다. 본 패키지는 오픈소스 프로젝트인 [Statgarten](https://www.r-bloggers.com/2023/03/introduction-to-data-analysis-with-statgarten/)의 일부이며, Global preprocessing 이후의 데이터를 다룬다. Train-Test Split - Recipe 정의 - 모델링 - 결과 출력의 4단계 과정을 통해 진행되도록 설계했다. 그림의 Global preprocessing에서는 아래와 같은 전처리를 수행하는 것으로 간주했다.
+패키지는 정형데이터에 대해 분류/회귀 모델링을 지원하도록 만들고자 했다. 본 패키지는 오픈소스 프로젝트인 [Statgarten](https://www.r-bloggers.com/2023/03/introduction-to-data-analysis-with-statgarten/)의 일부이며, global preprocessing 이후의 데이터를 다룬다. 본 글에서는 교차검증을 수행하면서 훈련 셋(1)을 다시 훈련(2)/검증 셋으로 나눌 때, (1)에 적용되는 전처리를 global preprocessing, (2)에 적용되는 전처리를 local preprocessing으로 정의했다 (data leakage 고려). Train-Test Split - Recipe 정의 - 모델링 - 결과 출력의 4단계 과정을 통해 진행되도록 설계했다. 그림의 global preprocessing에서는 아래와 같은 전처리를 수행하는 것으로 간주했다.
 
   - Normalization / Standardization
   - Feature selection
@@ -47,7 +47,7 @@ description: 일반인도 사용할 수 있는 AutoML 패키지(stove) 제작에
 
 ## 2. 전처리 방법 정의
 
-Tidymodels를 사용해 머신러닝 모델을 만들 때 인상적이었던 것 중 하나는 `recipes`라는 패키지였다. 데이터 전처리 방법을 정의해두는 것을 요리 레시피에 비유한 것인데, 꽤 센스있는 네이밍이라고 생각한다. Under/Over Sampling, Imputation, Scaling 등의 전처리는 Local preprocessing 단계에서 수행하며, 교차검증을 위해 분리한 샘플 각각에 적용되어야 한다. recipes 패키지는 이러한 Local preprocessing 방법을 정의하는 recipe를 생성할 수 있도록 도와준다. 이 단계에서는 현재 다음과 같은 기능을 정의할 수 있도록 구현한 상태이다.
+Tidymodels를 사용해 머신러닝 모델을 만들 때 인상적이었던 것 중 하나는 `recipes`라는 패키지였다. 데이터 전처리 방법을 정의해두는 것을 요리 레시피에 비유한 것인데, 꽤 센스있는 네이밍이라고 생각한다. Under/Over Sampling, Imputation, Scaling 등의 전처리는 Local preprocessing 단계에서 수행하며, 교차검증을 위해 분리한 샘플 각각에 적용되어야 한다. recipes 패키지는 이러한 Local preprocessing 방법을 정의하는 recipe를 생성할 수 있도록 도와준다. 이 단계에서는 현재 다음과 같은 기능을 정의할 수 있도록 구현한 상태이다. 데이터 불균형에 대처하기 위한 언더/오버샘플링 역시 이 부분에서 수행되어야 하지만, 아직 구현하지 못한 상태다.  
 
   - Imputation 수행 여부
   - Scaling 수행 여부
