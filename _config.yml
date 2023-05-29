@@ -30,7 +30,7 @@ color_theme: auto                                       # auto, dark or light
 
 # Comments
 comments:
-  disqus_shortname: disqus_9JOEp8V8p9                                     # Your discus shortname for comments
+  disqus_shortname: 'disqus_9JOEp8V8p9'
   cusdis_app_id:                                        # Your cusdis data-app-id
   utterances:                                           # Enable by filling below information. For more info, go to https://utteranc.es
     repo:                                               # your public comments repository (e.g. owner/repo)
