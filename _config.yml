@@ -26,6 +26,8 @@ menu:
   - title: About
     url: /about/
 
+accent_image: /assets/img/sidebar-bg.jpg
+
 # Hydejack 설정
 hydejack:
   no_break_layout: false
