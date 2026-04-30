@@ -1,0 +1,12 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+vendor/
+.bundle/
+.DS_Store
+node_modules/
+convert_notion.py
+.mcp.json
+.claude/

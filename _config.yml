@@ -1,0 +1,78 @@
+# Site
+title: Moondb Blog
+tagline: 기술과 각종 생각에 대한 기록
+description: >
+  개인 블로그입니다. 기술 노트, 생각, 서평 등을 남깁니다.
+url: "https://ycseong07.github.io"
+baseurl: ""
+lang: ko-KR
+timezone: Asia/Seoul
+
+# Theme
+theme: jekyll-theme-hydejack
+
+# Author (사이드바와 SEO에 노출됨)
+author:
+  name: moondb
+  email: ycseong07@gmail.com
+  about: |
+    안녕하세요. **moondb**의 블로그입니다.
+    기술 노트와 생각, 서평 등을 남깁니다.
+
+# Sidebar / 메뉴
+menu:
+  - title: Blog
+    url: /blog/
+  - title: About
+    url: /about/
+
+# Hydejack 설정
+hydejack:
+  no_break_layout: false
+  no_inline_css: false
+  no_third_party_analytics: false
+  hide_last_modified: false
+  use_lsi: false
+  no_search: false
+  no_drawer: false
+  advertise: false
+  offline:
+    enabled: false
+
+# 컬렉션 — featured_categories를 사이드바 항목/페이지로 사용
+collections:
+  featured_categories:
+    permalink: /:name/
+    output: true
+
+# 빌드 설정
+permalink: /:year/:month:day_:slug/
+paginate: 5
+paginate_path: /page-:num/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      applause_button: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-include-cache
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - README.md
+  - .claude
+  - service.md
+  - service/
