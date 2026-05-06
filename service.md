@@ -7,7 +7,7 @@ description: 개발한 서비스들을 소개합니다
 
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:2rem;">
 
-  <a href="/service/dummy-app/"
+  <a href="/service/saymine/"
      style="display:block;text-decoration:none;color:inherit;border:1px solid rgba(128,128,128,.25);border-radius:8px;overflow:hidden;transition:box-shadow .2s ease;"
      onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,.15)'"
      onmouseout="this.style.boxShadow='none'">

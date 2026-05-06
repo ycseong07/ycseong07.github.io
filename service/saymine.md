@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SayMine
-permalink: /service/dummy-app/
+permalink: /service/saymine/
 description: 나만의 문장을 만들어 주는 영어문장 암기 앱
 ---
 
