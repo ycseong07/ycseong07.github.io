@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /about/
-description: 블로그 소개
+description: 소개
 ---
 
 # 소개
