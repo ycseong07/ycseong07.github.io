@@ -10,3 +10,4 @@ node_modules/
 convert_notion.py
 .mcp.json
 .claude/
+tmp/

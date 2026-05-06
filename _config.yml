@@ -23,6 +23,8 @@ author:
 menu:
   - title: Blog
     url: /blog/
+  - title: Service
+    url: /service/
   - title: About
     url: /about/
 
@@ -76,5 +78,3 @@ exclude:
   - node_modules
   - README.md
   - .claude
-  - service.md
-  - service/
