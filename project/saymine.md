@@ -1,21 +1,21 @@
 ---
 layout: page
 title: SayMine
-permalink: /service/saymine/
+permalink: /project/saymine/
 description: 나만의 문장을 만들어 주는 영어문장 암기 앱
 ---
 
 <div style="display:flex;gap:1.5rem;justify-content:center;margin:2rem 0;">
   <figure style="flex:1;min-width:0;margin:0;text-align:center;">
-    <img src="/assets/img/service/preview_1.gif" alt="미리보기 1" style="width:100%;border-radius:8px;">
+    <img src="/assets/img/project/preview_1.gif" alt="미리보기 1" style="width:100%;border-radius:8px;">
     <figcaption style="margin-top:.6rem;font-size:.9rem;opacity:.7;">캡처이미지 -> 문장카드</figcaption>
   </figure>
   <figure style="flex:1;min-width:0;margin:0;text-align:center;">
-    <img src="/assets/img/service/preview_2.gif" alt="미리보기 2" style="width:100%;border-radius:8px;">
+    <img src="/assets/img/project/preview_2.gif" alt="미리보기 2" style="width:100%;border-radius:8px;">
     <figcaption style="margin-top:.6rem;font-size:.9rem;opacity:.7;">문장카드 -> 5턴 대화 생성</figcaption>
   </figure>
   <figure style="flex:1;min-width:0;margin:0;text-align:center;">
-    <img src="/assets/img/service/preview_3.gif" alt="미리보기 3" style="width:100%;border-radius:8px;">
+    <img src="/assets/img/project/preview_3.gif" alt="미리보기 3" style="width:100%;border-radius:8px;">
     <figcaption style="margin-top:.6rem;font-size:.9rem;opacity:.7;">Youtube -> 문장카드</figcaption>
   </figure>
 </div>
