@@ -4,8 +4,11 @@ title: AI 투자 리서치 에이전트
 permalink: /project/stock-analysis/
 description: 공시, 시세, 수급, 뉴스를 종합하여 주식종목을 분석하는 AI 에이전트
 ---
+![스크린샷](/assets/img/project/stock_analysis_screenshot.png)
 
 투자 판단에 필요한 정보는 너무 분산되어 있다. 차트, 공시, 재무, 수급, 거시지표, 뉴스를 매번 따로 열어보는게 비효율적이라 AI 비서를 만들어보고 싶다는 욕심이 있었는데, 토스증권의 AI 시그널 기능을 보고 이와 비슷한 기능을 만들어보고자 했다. 다만, 의료나 금융처럼 정확성이 중요한 도메인에서 LLM을 활용하고자 할 때, 낙관적 평가에 치중된 결과나 근거 없는 추측이 섞인 답변은 꽤 까다로운 장벽이다. 이를 해결하고, 실제로 참고할 수 있을만한 답변을 내놓는 에이전트를 개발해보고자 했다.
+
+[github 링크](https://github.com/ycseong07/stock-analysis)
 
 ## 데이터
 
