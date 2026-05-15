@@ -13,5 +13,5 @@ description: 기술 노트, 회고 등을 남깁니다
 ---
 
 - [Blog](/blog/) — 기술 노트와 회고
-- [Service](/service/) — 개발한 앱과 서비스
+- [Project](/project/) — 개인 프로젝트
 - [About](/about/) — 소개
